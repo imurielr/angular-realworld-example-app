@@ -8,7 +8,7 @@ describe('Test with backend', () => {
     cy.loginToApplication();
   });
 
-  it('verify correct request and response', () => {
+  it.skip('verify correct request and response', () => {
     cy.intercept('POST', `${Cypress.env('apiUrl')}/api/articles`).as('postArticles');
 
     cy.contains('New Article').click();

@@ -1,29 +1,27 @@
 <?xml version="1.0"?>
 <testsuites>
-<testsuite name="Root Suite" timestamp="2022-08-23T15:51:14" tests="0" file="cypress/e2e/secondTest.spec.js" time="0.0000" failures="0"></testsuite>
-<testsuite name="Test log out" timestamp="2022-08-23T15:51:14" tests="1" time="2.9400" failures="0">
+<testsuite name="Root Suite" timestamp="2022-08-23T17:05:46" tests="0" file="cypress/e2e/fistTest.spec.js" time="0.0000" failures="0"></testsuite>
+<testsuite name="Test with backend" timestamp="2022-08-23T17:05:46" tests="5" time="31.5430" failures="1">
   
-  <testcase name="Test log out verify user can log out successfully" time="2.9520" classname="verify user can log out successfully"></testcase>
-  
-</testsuite>
-
-<testsuite name="Root Suite" timestamp="2022-08-23T15:50:31" tests="0" file="cypress/e2e/fistTest.spec.js" time="0.0000" failures="0"></testsuite>
-<testsuite name="Test with backend" timestamp="2022-08-23T15:50:31" tests="5" time="38.0050" failures="1">
-  
-  <testcase name="Test with backend verify correct request and response" time="7.7980" classname="verify correct request and response"></testcase>
-  
-  <testcase name="Test with backend should have tags with routing object" time="3.1820" classname="should have tags with routing object"></testcase>
-  
-  <testcase name="Test with backend should verify global feed likes count" time="3.1040" classname="should verify global feed likes count"></testcase>
-  
-  <testcase name="Test with backend Intercepting and modifying the request and response" time="4.7160" classname="Intercepting and modifying the request and response">
+  <testcase name="Test with backend verify correct request and response" time="4.6950" classname="verify correct request and response">
     
-    <failure message="Cannot read properties of undefined (reading &apos;description&apos;)" type="TypeError"><![CDATA[TypeError: Cannot read properties of undefined (reading 'description')
-    at eval (http://localhost:4200/__cypress/tests?p=cypress/e2e/fistTest.spec.js:150:33)]]></failure>
+    <failure message="expected 422 to equal 200" type="AssertionError"><![CDATA[AssertionError: expected 422 to equal 200
+    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/e2e/fistTest.spec.js:120:42)]]></failure>
     
   </testcase>
   
-  <testcase name="Test with backend delete a new article in a global feed" time="7.7780" classname="delete a new article in a global feed"></testcase>
+  <testcase name="Test with backend should have tags with routing object" time="2.0210" classname="should have tags with routing object"></testcase>
+  
+  <testcase name="Test with backend should verify global feed likes count" time="3.3270" classname="should verify global feed likes count"></testcase>
+  
+  <testcase name="Test with backend delete a new article in a global feed" time="7.7970" classname="delete a new article in a global feed"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2022-08-23T17:06:23" tests="0" file="cypress/e2e/secondTest.spec.js" time="0.0000" failures="0"></testsuite>
+<testsuite name="Test log out" timestamp="2022-08-23T17:06:23" tests="1" time="3.0230" failures="0">
+  
+  <testcase name="Test log out verify user can log out successfully" time="3.0250" classname="verify user can log out successfully"></testcase>
   
 </testsuite>
 

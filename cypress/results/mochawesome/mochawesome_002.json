@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 1,
     "failures": 0,
-    "start": "2022-08-23T17:05:46.942Z",
-    "end": "2022-08-23T17:06:18.510Z",
-    "duration": 31568,
+    "start": "2022-08-23T17:07:45.612Z",
+    "end": "2022-08-23T17:08:25.794Z",
+    "duration": 40182,
     "testsRegistered": 5,
     "passPercent": 75,
     "pendingPercent": 20,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4c32aa91-04f7-4185-8f0b-6ef08fc4c6ac",
+      "uuid": "b5379133-e952-44d9-a3ab-e16eae907e17",
       "title": "",
       "fullFile": "cypress/e2e/fistTest.spec.js",
       "file": "cypress/e2e/fistTest.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "33ca6a5f-d2ca-44dd-8e03-7c048cd8c6ff",
+          "uuid": "3e7f451e-c8f6-406c-ba69-9ccd23ee6cfd",
           "title": "Test with backend",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "verify correct request and response",
               "fullTitle": "Test with backend verify correct request and response",
               "timedOut": null,
-              "duration": 5157,
+              "duration": 5331,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: expected 422 to equal 200\n    at Context.eval (http://localhost:4200/__cypress/tests?p=cypress/e2e/fistTest.spec.js:120:42)",
                 "diff": "- 422\n+ 200\n"
               },
-              "uuid": "e05c8c18-a56d-46a5-8b61-5d4979dfc4c3",
-              "parentUUID": "33ca6a5f-d2ca-44dd-8e03-7c048cd8c6ff",
+              "uuid": "b1b91378-a694-487a-b90a-b6eee8e0f4ea",
+              "parentUUID": "3e7f451e-c8f6-406c-ba69-9ccd23ee6cfd",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "should have tags with routing object",
               "fullTitle": "Test with backend should have tags with routing object",
               "timedOut": null,
-              "duration": 2021,
+              "duration": 2073,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -69,8 +69,8 @@
               "context": null,
               "code": "cy.get('.tag-list').should('contain', 'cypress').and('contain', 'automation').and('contain', 'testing');",
               "err": {},
-              "uuid": "b82cc024-40fd-4afb-833d-17a4f611b367",
-              "parentUUID": "33ca6a5f-d2ca-44dd-8e03-7c048cd8c6ff",
+              "uuid": "bdb0bd94-9f33-4e96-a154-2e6996ca15f0",
+              "parentUUID": "3e7f451e-c8f6-406c-ba69-9ccd23ee6cfd",
               "isHook": false,
               "skipped": false
             },
@@ -78,7 +78,7 @@
               "title": "should verify global feed likes count",
               "fullTitle": "Test with backend should verify global feed likes count",
               "timedOut": null,
-              "duration": 3327,
+              "duration": 3412,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -87,8 +87,8 @@
               "context": null,
               "code": "cy.intercept('GET', '**/articles/feed*', '{\"articles\":[],\"articlesCount\":0}');\ncy.intercept('GET', '**/api/articles*', {\n  fixture: 'articles.json'\n});\ncy.contains('Global Feed').click();\ncy.get('app-article-list button').then(listOfButtons => {\n  expect(listOfButtons[0]).to.contain('10');\n  expect(listOfButtons[1]).to.contain('200');\n});\ncy.fixture('articles').then(file => {\n  const articleLink = file.articles[1].slug;\n  cy.intercept('POST', `**/articles/${articleLink}/favorite`, file);\n});\ncy.get('app-article-list button').eq(1).click().should('contain', '201');",
               "err": {},
-              "uuid": "7730c1e3-d55f-4583-8a9c-3d68628bf711",
-              "parentUUID": "33ca6a5f-d2ca-44dd-8e03-7c048cd8c6ff",
+              "uuid": "d34a883e-b701-4a70-b03a-7f47aacd967c",
+              "parentUUID": "3e7f451e-c8f6-406c-ba69-9ccd23ee6cfd",
               "isHook": false,
               "skipped": false
             },
@@ -105,8 +105,8 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "58b73705-13bd-49f7-89b3-34b67b762540",
-              "parentUUID": "33ca6a5f-d2ca-44dd-8e03-7c048cd8c6ff",
+              "uuid": "469113c7-37eb-4575-997f-020fdcbd198c",
+              "parentUUID": "3e7f451e-c8f6-406c-ba69-9ccd23ee6cfd",
               "isHook": false,
               "skipped": false
             },
@@ -114,7 +114,7 @@
               "title": "delete a new article in a global feed",
               "fullTitle": "Test with backend delete a new article in a global feed",
               "timedOut": null,
-              "duration": 7797,
+              "duration": 7614,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -123,26 +123,26 @@
               "context": null,
               "code": "const bodyRequest = {\n  article: {\n    tagList: [],\n    title: \"Request from API\",\n    description: \"This is a request\",\n    body: \"I created this with the API call\"\n  }\n};\ncy.intercept('DELETE', '**/articles/**').as('deleteArticle');\ncy.get('@token').then(token => {\n  cy.request({\n    url: `${Cypress.env('apiUrl')}/api/articles/`,\n    headers: {\n      'authorization': `Token ${token}`\n    },\n    method: 'POST',\n    body: bodyRequest\n  }).then(response => {\n    expect(response.status).to.equal(200);\n  });\n  cy.contains('Global Feed').click();\n  cy.get('.article-preview').first().click();\n  cy.get('.article-actions').contains('Delete Article').click().as('deleteArticle');\n  cy.wait('@deleteArticle');\n  cy.request({\n    url: `${Cypress.env('apiUrl')}/api/articles?limit=10&offset=0`,\n    headers: {\n      'authorization': `Token ${token}`\n    },\n    method: 'GET'\n  }).its('body').then(body => {\n    expect(body.articles[0].title).not.to.equal('Request from API');\n  });\n});",
               "err": {},
-              "uuid": "cc6d2cc7-b3ac-4dc9-9a35-95ddb9cc662e",
-              "parentUUID": "33ca6a5f-d2ca-44dd-8e03-7c048cd8c6ff",
+              "uuid": "e9bc678c-cc6d-4271-b32b-1a9f4aae862b",
+              "parentUUID": "3e7f451e-c8f6-406c-ba69-9ccd23ee6cfd",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b82cc024-40fd-4afb-833d-17a4f611b367",
-            "7730c1e3-d55f-4583-8a9c-3d68628bf711",
-            "cc6d2cc7-b3ac-4dc9-9a35-95ddb9cc662e"
+            "bdb0bd94-9f33-4e96-a154-2e6996ca15f0",
+            "d34a883e-b701-4a70-b03a-7f47aacd967c",
+            "e9bc678c-cc6d-4271-b32b-1a9f4aae862b"
           ],
           "failures": [
-            "e05c8c18-a56d-46a5-8b61-5d4979dfc4c3"
+            "b1b91378-a694-487a-b90a-b6eee8e0f4ea"
           ],
           "pending": [
-            "58b73705-13bd-49f7-89b3-34b67b762540"
+            "469113c7-37eb-4575-997f-020fdcbd198c"
           ],
           "skipped": [],
-          "duration": 18302,
+          "duration": 18430,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
