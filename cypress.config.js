@@ -8,4 +8,14 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     excludeSpecPattern: ['**/1-getting-started/*', '**/2-advanced-examples/*']
   },
+  env: {
+    username: 'isamuri.r@hotmail.com',
+    password: '123456789',
+    apiUrl: 'https://api.realworld.io'
+  },
+  retries: 2
+  // retries: {
+  //   runMode: 2,
+  //   openMode: 1
+  // }
 })
