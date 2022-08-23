@@ -13,9 +13,13 @@ module.exports = defineConfig({
     password: '123456789',
     apiUrl: 'https://api.realworld.io'
   },
-  retries: 2
+  retries: 2,
   // retries: {
   //   runMode: 2,
   //   openMode: 1
   // }
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-config.json'
+  }
 })
